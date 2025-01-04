@@ -2,13 +2,13 @@ import { ReactContext } from './context/ReactContext'
 import { useContext } from 'react'
 import { BrowserRouter, Routes, Route, Outlet, Navigate } from 'react-router'
 
-// import DashboardLayout from './pages/DashboardLayout';
+import DashboardLayout from './pages/DashboardLayout';
 
-// import LoginPage from './pages/auth/LoginPage';
-// import SignupPage from './pages/auth/SignupPage';
-// import ProfilPage from './pages/auth/ProfilPage';
+import LoginPage from './pages/auth/LoginPage';
+import SignupPage from './pages/auth/SignupPage';
+import ProfilePage from './pages/auth/ProfilePage';
 
-// import SorularPage from './pages/admin/SorularPage';
+import CitiesPage from './pages/admin/CitiesPage';
 // import SinavlarPage from './pages/user/SinavlarPage';
 // import YeniSinavPage from './pages/user/YeniSinavPage';
 // import SinavPage from './pages/user/SinavPage';
@@ -64,9 +64,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/All-cities' element={<Allcities />} />
-
         <Route path="/" element={<Home />} />
-        <Route path="/All-cities" element={<Allcities />} />
         <Route path="/All-experiences" element={<Allexperience />} />
         <Route path="/cities/:cityname" element={<CitiesInfo />} />
         <Route path="/experience/:experienceName" element={<Experience />} />
@@ -74,17 +72,16 @@ function App() {
         <Route path="/cities/getmore/:cityName" element={<GetmoreCityPage />} />
         <Route path="/404" element={<NotFound />} />
 
-
-        {/* <Route element={<AuthRoutes />}>
+        <Route element={<AuthRoutes />}>
           <Route path='/' element={<DashboardLayout />} >
-            <Route path='profil' element={<ProfilPage />} />
-            <Route path='' element={<AdminPages />} >
-              <Route path='sorular' element={<SorularPage />} />
+            <Route path='profile' element={<ProfilePage />} />
+            <Route path='admin' element={<AdminPages />} >
+              <Route path='cities' element={<CitiesPage />} />
             </Route>
             <Route path='' element={<UserPages />} >
-              <Route path='sinavlar' element={<SinavlarPage />} />
+              {/* <Route path='sinavlar' element={<SinavlarPage />} />
               <Route path='yeniSinav' element={<YeniSinavPage />} />
-              <Route path='sinav/:kategori' element={<SinavPage />} />
+              <Route path='sinav/:kategori' element={<SinavPage />} /> */}
             </Route>
           </Route>
         </Route>
@@ -92,7 +89,7 @@ function App() {
         <Route element={<UnAuthRoutes />}>
           <Route path='/login' element={<LoginPage />} />
           <Route path='/signup' element={<SignupPage />} />
-        </Route> */}
+        </Route>
 
       </Routes>
     </BrowserRouter>

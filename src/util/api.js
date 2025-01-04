@@ -1,5 +1,6 @@
 import axios from 'axios';
-const url = "http://localhost:3000";
+// const url = "http://localhost:3000";
+const url = "https://seyahat-rehberligi-back.vercel.app";
 
 // ================== KULLANICI ==================
 // ================== KULLANICI ==================
@@ -43,13 +44,13 @@ export async function kullaniciGuncelle(token, ad, soyad, sifre) {
 
 
 
-// ================== SORU ==================
-// ================== SORU ==================
-export async function soruOlustur(token, soru, a, b, c, d, dogruCevap, kategori, resim) {
+// ================== SEHIR ==================
+// ================== SEHIR ==================
+export async function sehirOlustur(token, ad, resim, video) {
   try {
-    const body = { soru, a, b, c, d, dogruCevap, kategori, resim };
+    const body = { ad, resim, video };
     const options = { headers: { token, } }
-    const response = await axios.post(`${url}/soru`, body, options);
+    const response = await axios.post(`${url}/sehir`, body, options);
     return response.data;
   } catch (error) {
     console.log(error);
@@ -57,10 +58,9 @@ export async function soruOlustur(token, soru, a, b, c, d, dogruCevap, kategori,
   }
 }
 
-export async function sorulariGetir(token) {
+export async function sehirleriGetir(token) {
   try {
-    const options = { headers: { token, } }
-    const response = await axios.get(`${url}/soru`, options);
+    const response = await axios.get(`${url}/sehir`);
     return response.data;
   } catch (error) {
     console.log(error);
@@ -68,11 +68,11 @@ export async function sorulariGetir(token) {
   }
 }
 
-export async function soruGuncelle(token, soruId, soru, a, b, c, d, dogruCevap, kategori, resim) {
+export async function sehirGuncelle(token, sehirId, ad, resim, video) {
   try {
-    const body = { soru, a, b, c, d, dogruCevap, kategori, resim};
+    const body = { ad, resim, video};
     const options = { headers: { token, } }
-    const response = await axios.patch(`${url}/soru/${soruId}`, body, options);
+    const response = await axios.patch(`${url}/sehir/${sehirId}`, body, options);
     return response.data;
   } catch (error) {
     console.log(error);
@@ -80,18 +80,18 @@ export async function soruGuncelle(token, soruId, soru, a, b, c, d, dogruCevap, 
   }
 }
 
-export async function soruSil(token, soruId) {
+export async function sehirSil(token, sehirId) {
   try {
     const options = { headers: { token, } }
-    const response = await axios.delete(`${url}/soru/${soruId}`, options);
+    const response = await axios.delete(`${url}/sehir/${sehirId}`, options);
     return response.data;
   } catch (error) {
     console.log(error);
     return error;
   }
 }
-// ================== SORU ==================
-// ================== SORU ==================
+// ================== SEHIR ==================
+// ================== SEHIR ==================
 
 
 
