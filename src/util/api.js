@@ -1,6 +1,6 @@
 import axios from 'axios';
-// const url = "http://localhost:3000";
-const url = "https://seyahat-rehberligi-back.vercel.app";
+const url = "http://localhost:3000";
+// const url = "https://seyahat-rehberligi-back.vercel.app";
 
 // ================== KULLANICI ==================
 // ================== KULLANICI ==================
@@ -165,3 +165,66 @@ export async function tecrubeSil(token, tecrubeId) {
 }
 // ================== TECRUBE ==================
 // ================== TECRUBE ==================
+
+
+
+
+
+// ================== TECRUBE BIRIMI ==================
+// ================== TECRUBE BIRIMI ==================
+export async function tecrubeBirimiOlustur(token, ad, resim, aciklama, metin, tecrubeId) {
+  try {
+    const body = {ad, resim, aciklama, metin, tecrubeId};
+    const options = { headers: { token, } }
+    const response = await axios.post(`${url}/tecrubeBirimi`, body, options);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+}
+
+export async function tecrubeBirimiGetir(tecrubeBirimiId) {
+  try {
+    const response = await axios.get(`${url}/tecrubeBirimi/${tecrubeBirimiId}`);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+}
+
+export async function tecrubeBirimleriGetir() {
+  try {
+    const response = await axios.get(`${url}/tecrubeBirimi`);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+}
+
+export async function tecrubeBirimiGuncelle(token, tecrubeBirimiId, ad, resim, aciklama, metin, tecrubeId) {
+  try {
+    const body = {ad, resim, aciklama, metin, tecrubeId};
+    const options = { headers: { token, } }
+    const response = await axios.patch(`${url}/tecrubeBirimi/${tecrubeBirimiId}`, body, options);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+}
+
+export async function tecrubeBirimiSil(token, tecrubeBirimiId) {
+  try {
+    const options = { headers: { token, } }
+    const response = await axios.delete(`${url}/tecrubeBirimi/${tecrubeBirimiId}`, options);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+}
+// ================== TECRUBE BIRIMI ==================
+// ================== TECRUBE BIRIMI ==================

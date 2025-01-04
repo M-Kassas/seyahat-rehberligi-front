@@ -13,6 +13,7 @@ export default function() {
     {link: "/profile", label:"Profil"},
     {link: "/admin/cities", label:"Şehirler"},
     {link: "/admin/experiences", label:"Tecrübeler"},
+    {link: "/admin/experienceItems", label:"Tecrübele Birimleri"},
   ];
 
   const userNavLinks = [

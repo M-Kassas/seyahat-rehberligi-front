@@ -10,6 +10,7 @@ import ProfilePage from './pages/auth/ProfilePage';
 
 import CitiesPage from './pages/admin/CitiesPage';
 import ExperiencesPage from './pages/admin/ExperiencesPage';
+import ExperienceItemsPage from './pages/admin/ExperienceItemsPage';
 
 import Home from "./pages/Home";
 import CitiesInfo from "./pages/CitiesInfo";
@@ -77,6 +78,7 @@ function App() {
             <Route path='admin' element={<AdminPages />} >
               <Route path='cities' element={<CitiesPage />} />
               <Route path='experiences' element={<ExperiencesPage />} />
+              <Route path='experienceItems' element={<ExperienceItemsPage />} />
             </Route>
             <Route path='' element={<UserPages />} >
               {/* <Route path='sinavlar' element={<SinavlarPage />} />
