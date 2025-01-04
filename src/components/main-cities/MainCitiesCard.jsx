@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Card from "../card/Card";
-import allData from "../../data/allData.json";
+import { ReactContext } from "../../context/ReactContext";
 
 const MainCitiesCard = () => {
+  const ctx = useContext(ReactContext);
+  const [cities, setCities] = useState([]);
+
+  useEffect(() => {
+    (async function() {
+      const response = await ctx.api.sehirleriGetir();
+      if (!response.error) {
+        setCities(response.sehirler);
+      }
+    })();
+  }, [])
+
   return (
     <Card
-      items={allData.cities}
+      items={cities}
       linkPrefix="/cities"
       showMoreLink="/All-cities"
       moreText="More Cities"

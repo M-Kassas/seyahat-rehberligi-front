@@ -9,9 +9,7 @@ import SignupPage from './pages/auth/SignupPage';
 import ProfilePage from './pages/auth/ProfilePage';
 
 import CitiesPage from './pages/admin/CitiesPage';
-// import SinavlarPage from './pages/user/SinavlarPage';
-// import YeniSinavPage from './pages/user/YeniSinavPage';
-// import SinavPage from './pages/user/SinavPage';
+import ExperiencesPage from './pages/admin/ExperiencesPage';
 
 import Home from "./pages/Home";
 import CitiesInfo from "./pages/CitiesInfo";
@@ -65,11 +63,12 @@ function App() {
       <Routes>
         <Route path='/All-cities' element={<Allcities />} />
         <Route path="/" element={<Home />} />
+        <Route path="/cities/:cityid" element={<CitiesInfo />} />
+        <Route path="/cities/getmore/:feature/:cityid" element={<GetmoreCityPage />} />
+
         <Route path="/All-experiences" element={<Allexperience />} />
-        <Route path="/cities/:cityname" element={<CitiesInfo />} />
         <Route path="/experience/:experienceName" element={<Experience />} />
         <Route path="/experience/getmore/:experienceName" element={<GetmoreExpPage />} />
-        <Route path="/cities/getmore/:cityName" element={<GetmoreCityPage />} />
         <Route path="/404" element={<NotFound />} />
 
         <Route element={<AuthRoutes />}>
@@ -77,6 +76,7 @@ function App() {
             <Route path='profile' element={<ProfilePage />} />
             <Route path='admin' element={<AdminPages />} >
               <Route path='cities' element={<CitiesPage />} />
+              <Route path='experiences' element={<ExperiencesPage />} />
             </Route>
             <Route path='' element={<UserPages />} >
               {/* <Route path='sinavlar' element={<SinavlarPage />} />

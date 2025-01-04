@@ -8,14 +8,14 @@ const Card = ({ items, linkPrefix, showMoreLink, moreText, gridCols }) => {
         {items.map((item) => (
           <Link
             key={item.id}
-            to={`${linkPrefix}/${item.name.replace(/\s/g, "")}`}
+            to={`${linkPrefix}/${item.id}`}
           >
             <div
               className="w-[200px] h-[280px] lg:w-[220px] lg:h-[310px] mr-5 mb-5 bg-cover bg-center rounded-3xl cursor-pointer flex items-center hover:opacity-100 ease-in-out duration-300 hover:scale-110"
-              style={{ backgroundImage: `url(${item.background})` }}
+              style={{ backgroundImage: `url(${item.resim})` }}
             >
               <p className="transform w-[184px] h-[184px] -rotate-90 text-white font-bold text-2xl">
-                {item.name}
+                {item.ad}
               </p>
             </div>
           </Link>

@@ -12,6 +12,7 @@ export default function() {
   const adminNavLinks = [
     {link: "/profile", label:"Profil"},
     {link: "/admin/cities", label:"Şehirler"},
+    {link: "/admin/experiences", label:"Tecrübeler"},
   ];
 
   const userNavLinks = [

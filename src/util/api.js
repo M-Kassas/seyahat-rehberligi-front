@@ -1,6 +1,6 @@
 import axios from 'axios';
-// const url = "http://localhost:3000";
-const url = "https://seyahat-rehberligi-back.vercel.app";
+const url = "http://localhost:3000";
+// const url = "https://seyahat-rehberligi-back.vercel.app";
 
 // ================== KULLANICI ==================
 // ================== KULLANICI ==================
@@ -58,6 +58,16 @@ export async function sehirOlustur(token, ad, resim, video, kesfedinResim, kesfe
   }
 }
 
+export async function sehirGetir(sehirId) {
+  try {
+    const response = await axios.get(`${url}/sehir/${sehirId}`);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+}
+
 export async function sehirleriGetir() {
   try {
     const response = await axios.get(`${url}/sehir`);
@@ -97,12 +107,13 @@ export async function sehirSil(token, sehirId) {
 
 
 
-// ================== SINAV ==================
-// ================== SINAV ==================
-export async function sinavlariGetir(token) {
+// ================== TECRUBE ==================
+// ================== TECRUBE ==================
+export async function tecrubeOlustur(token, ad, resim) {
   try {
+    const body = { ad, resim};
     const options = { headers: { token, } }
-    const response = await axios.get(`${url}/sinav`, options);
+    const response = await axios.post(`${url}/tecrube`, body, options);
     return response.data;
   } catch (error) {
     console.log(error);
@@ -110,11 +121,9 @@ export async function sinavlariGetir(token) {
   }
 }
 
-export async function sinavOlustur(token, kategori) {
+export async function tecrubeGetir(tecrubeId) {
   try {
-    const body = { kategori };
-    const options = { headers: { token, } }
-    const response = await axios.post(`${url}/sinav`, body, options);
+    const response = await axios.get(`${url}/tecrube/${tecrubeId}`);
     return response.data;
   } catch (error) {
     console.log(error);
@@ -122,16 +131,37 @@ export async function sinavOlustur(token, kategori) {
   }
 }
 
-export async function sinavBitir(token, sinavId, soruCevap) {
+export async function tecrubeleriGetir() {
   try {
-    const body = { soruCevap };
-    const options = { headers: { token, } }
-    const response = await axios.post(`${url}/sinav/${sinavId}`, body, options);
+    const response = await axios.get(`${url}/tecrube`);
     return response.data;
   } catch (error) {
     console.log(error);
     return error;
   }
 }
-// ================== SINAV ==================
-// ================== SINAV ==================
+
+export async function tecrubeGuncelle(token, tecrubeId, ad, resim) {
+  try {
+    const body = { ad, resim};
+    const options = { headers: { token, } }
+    const response = await axios.patch(`${url}/tecrube/${tecrubeId}`, body, options);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+}
+
+export async function tecrubeSil(token, tecrubeId) {
+  try {
+    const options = { headers: { token, } }
+    const response = await axios.delete(`${url}/tecrube/${tecrubeId}`, options);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+}
+// ================== TECRUBE ==================
+// ================== TECRUBE ==================
