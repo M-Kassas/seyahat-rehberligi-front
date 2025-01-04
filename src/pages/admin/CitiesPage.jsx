@@ -93,17 +93,36 @@ export default function() {
     setAd("");
     setResim("");
     setVideo("");
+
+    setKesfedinResim("");
+    setKesfedinAciklama("");
+    setKesfedinMetin("");
+    setHissetResim("");
+    setHissetAciklama("");
+    setHissetMetin("");
+    setLezzetResim("");
+    setLezzetAciklama("");
+    setLezzetMetin("");
     
     setActionError([]);
     setUpdateId('');
   }
 
-  function prepareUpdate(id, ad, resim, video) {
+  function prepareUpdate(id, ad, resim, video, kesfedinResim, kesfedinAciklama, kesfedinMetin, hissetResim, hissetAciklama, hissetMetin, lezzetResim, lezzetAciklama, lezzetMetin) {
     setUpdateId(id);
 
     setAd(ad);
     setResim(resim);
     setVideo(video);
+    setKesfedinResim(kesfedinResim);
+    setKesfedinAciklama(kesfedinAciklama);
+    setKesfedinMetin(kesfedinMetin);
+    setHissetResim(hissetResim);
+    setHissetAciklama(hissetAciklama);
+    setHissetMetin(hissetMetin);
+    setLezzetResim(lezzetResim);
+    setLezzetAciklama(lezzetAciklama);
+    setLezzetMetin(lezzetMetin);
     
     setOpenUpdateOverlay(true);
   }
