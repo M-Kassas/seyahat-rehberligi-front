@@ -20,7 +20,9 @@ const GetmoreCity = ({feature, city}) => {
           <h4 className=" text-2xl mt-5 mb-5">{city.ad}</h4>
         </div>
         <div className="container mx-auto pr-4 md:pr-96 pb-10">
-          {city[feature+"Metin"]}
+          <pre className="text-wrap text-2xl font-sans">
+            {city[feature+"Metin"]}
+          </pre>
         </div>
       </div>
     </div>

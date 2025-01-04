@@ -66,10 +66,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/cities/:cityid" element={<CitiesInfo />} />
         <Route path="/cities/getmore/:feature/:cityid" element={<GetmoreCityPage />} />
-
         <Route path="/All-experiences" element={<Allexperience />} />
-        <Route path="/experience/:experienceName" element={<Experience />} />
-        <Route path="/experience/getmore/:experienceName" element={<GetmoreExpPage />} />
+        <Route path="/experience/:experienceid" element={<Experience />} />
+
+        <Route path="/experience/getmore/:experienceitemid" element={<GetmoreExpPage />} />
         <Route path="/404" element={<NotFound />} />
 
         <Route element={<AuthRoutes />}>

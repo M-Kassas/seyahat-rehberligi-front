@@ -1,6 +1,6 @@
 import axios from 'axios';
-// const url = "http://localhost:3000";
-const url = "https://seyahat-rehberligi-back.vercel.app";
+const url = "http://localhost:3000";
+// const url = "https://seyahat-rehberligi-back.vercel.app";
 
 // ================== KULLANICI ==================
 // ================== KULLANICI ==================
