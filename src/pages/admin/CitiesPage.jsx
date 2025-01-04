@@ -198,7 +198,7 @@ export default function() {
                         <td>{sehir.kesfedinAciklama}</td>
                         <td>{sehir.hissetAciklama}</td>
                         <td>{sehir.lezzetAciklama}</td>
-                        <td><Button label="Güncelle" type="Update" disabled={actionLoading} onClick={() => prepareUpdate(sehir.id, sehir.ad, sehir.resim, sehir.video)}/></td>
+                        <td><Button label="Güncelle" type="Update" disabled={actionLoading} onClick={() => prepareUpdate(sehir.id, sehir.ad, sehir.resim, sehir.video, sehir.kesfedinResim, sehir.kesfedinAciklama, sehir.kesfedinMetin, sehir.hissetResim, sehir.hissetAciklama, sehir.hissetMetin, sehir.lezzetResim, sehir.lezzetAciklama, sehir.lezzetMetin)}/></td>
                         <td><Button label="Sil" type="Delete" disabled={actionLoading} onClick={() => deleteAction(sehir.id)}/></td>
                       </tr>)
                     }
