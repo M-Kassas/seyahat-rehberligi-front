@@ -46,9 +46,9 @@ export async function kullaniciGuncelle(token, ad, soyad, sifre) {
 
 // ================== SEHIR ==================
 // ================== SEHIR ==================
-export async function sehirOlustur(token, ad, resim, video) {
+export async function sehirOlustur(token, ad, resim, video, kesfedinResim, kesfedinAciklama, kesfedinMetin, hissetResim, hissetAciklama, hissetMetin, lezzetResim, lezzetAciklama, lezzetMetin) {
   try {
-    const body = { ad, resim, video };
+    const body = { ad, resim, video, kesfedinResim, kesfedinAciklama, kesfedinMetin, hissetResim, hissetAciklama, hissetMetin, lezzetResim, lezzetAciklama, lezzetMetin };
     const options = { headers: { token, } }
     const response = await axios.post(`${url}/sehir`, body, options);
     return response.data;
@@ -68,9 +68,9 @@ export async function sehirleriGetir(token) {
   }
 }
 
-export async function sehirGuncelle(token, sehirId, ad, resim, video) {
+export async function sehirGuncelle(token, sehirId, ad, resim, video, kesfedinResim, kesfedinAciklama, kesfedinMetin, hissetResim, hissetAciklama, hissetMetin, lezzetResim, lezzetAciklama, lezzetMetin) {
   try {
-    const body = { ad, resim, video};
+    const body = { ad, resim, video, kesfedinResim, kesfedinAciklama, kesfedinMetin, hissetResim, hissetAciklama, hissetMetin, lezzetResim, lezzetAciklama, lezzetMetin};
     const options = { headers: { token, } }
     const response = await axios.patch(`${url}/sehir/${sehirId}`, body, options);
     return response.data;
