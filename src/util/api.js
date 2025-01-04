@@ -58,7 +58,7 @@ export async function sehirOlustur(token, ad, resim, video, kesfedinResim, kesfe
   }
 }
 
-export async function sehirleriGetir(token) {
+export async function sehirleriGetir() {
   try {
     const response = await axios.get(`${url}/sehir`);
     return response.data;
