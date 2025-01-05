@@ -43,9 +43,6 @@ export default function() {
       <div className={classes.formInputCont}>
         <Button label={loading ? "İşleniyor ..." : "Giriş Yap"} type="Action" disabled={loading} onClick={login}/>
       </div>
-      <div className={classes.formInputCont}>
-        <NavLink className={classes.link} to="/signup">Hesap Oluştur</NavLink>
-      </div>
     </form>
   );
 }

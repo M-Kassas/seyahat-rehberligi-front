@@ -21,7 +21,7 @@ const Landing = () => {
           TÜRKİYE
         </h1>
         <h2 className="text-white pt-5 text-xl md:text-2xl lg:text-5xl text-center">
-          The <span className="italic">new</span> dawn of journey
+          Seyahat Rehberliği
         </h2>
         <div className="absolute bottom-10">
           <button

@@ -19,7 +19,7 @@ const Allcities = () => {
   return (
     <div className="bg-black w-full h-full">
       <Navbar />
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 container mx-auto pt-24">
+      <div  className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 container mx-auto pt-24">
         {cities.map((city) => (
           <Link key={city.id} to={`/cities/${city.id}`}>
             <div

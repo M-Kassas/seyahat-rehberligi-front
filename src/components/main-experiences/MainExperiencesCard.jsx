@@ -21,7 +21,7 @@ const MainExperiencesCard = () => {
       items={tecrubeler}
       linkPrefix="/experience"
       showMoreLink="/All-experiences"
-      moreText="More Experiences"
+      moreText="Fazla Deneyimler"
       gridCols="grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5"
     />
   );

@@ -20,7 +20,7 @@ const MainCitiesCard = () => {
       items={cities}
       linkPrefix="/cities"
       showMoreLink="/All-cities"
-      moreText="More Cities"
+      moreText="Fazla Şehirler"
       gridCols="grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5"
     />
   );
